@@ -16,7 +16,9 @@ const register = async (req, res) => {
       email,
       phone,
       userType,
-      hasPassword: !!password
+      hasPassword: !!password,
+      passwordLength: password ? password.length : 0,
+      bodyKeys: Object.keys(req.body)
     });
 
     // Check if user already exists
